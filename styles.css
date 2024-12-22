@@ -72,8 +72,6 @@ h2:hover {
 }
 
 .photo {
-    height: 200px;
-    width: 100%;
     text-align: center;
 }
 
@@ -93,15 +91,15 @@ h2:hover {
     border: 2px solid #000000;
 }
 
-ul {
-    list-style-type: none;
-    margin: 20px;
-    padding: 0;
-}
-
 .work-experiences {
     width: 90%;
     margin: 0 auto;
+}
+
+.work-experiences-list {
+    list-style-type: none;
+    margin: 20px;
+    padding: 0;
 }
 
 .work-experience-header {
@@ -120,7 +118,9 @@ ul {
 }
 
 .work-experience-list {
+    list-style-type: none;
     padding-block: 10px;
+    margin-block: 20px;
 }
 
 .work-experience-list-item {
@@ -181,7 +181,7 @@ ul {
     width: 12px;
     height: 12px;
     background-color: #A0C4E4;
-    border: 2px solid #ffffff;
+    border: 2px solid #ffffff   ;
     border-radius: 100%;
 }
 
@@ -295,10 +295,12 @@ table tr:nth-child(odd) {
 
 .contact-information {
     text-align: right;
+    text-wrap: wrap;
 }
 
 .footer-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     font-size:1.3rem;
@@ -315,4 +317,75 @@ table tr:nth-child(odd) {
 
 .back-to-top:hover {
     background-color: #0000ff;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 480px) {
+    * {
+        font-size: 5vw;
+    }
+    h1 {
+        font-size:10vw;
+    }
+    h2 {
+        font-size:8vw;
+        text-wrap: wrap;
+    }
+    h3 {
+        font-size:6vw;
+    }
+    .profile {
+        flex-direction: column;
+        width: 100%;
+    }
+    .work-experiences {
+        width: 100%;
+    }
+    .work-experience-list {
+        list-style:square;
+    }
+    .work-experience-first-list-item {
+        list-style:none;
+    }
+    .timeline {
+        width: 100%;
+    }
+    .timeline::before {
+        left: 10%
+    }
+    .timeline-item:nth-child(even) {
+        text-align: left;
+        left: 10%;
+    }
+    .timeline-item:nth-child(odd) {
+        text-align: left;
+        left: 10%;
+    }
+    .timeline-item:nth-child(odd)::before {
+        left: -6px;
+    }
+    .timeline-item {
+        width: 100%;
+    }
+    .skills-grid {
+        display: flex;
+        flex-direction: column;
+        height: 600px;
+        width: 100%;
+    }
+    .information {
+        flex-direction: column;
+    }
+    .contact-information {
+        text-align: left;
+        p {
+            font-size: 1.5vw;
+        }
+    }
+    .footer-container {
+        flex-direction: column;
+    }
+    .footer-container-middle-item {
+        padding-block: 40px;
+    }
 }
